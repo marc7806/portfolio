@@ -1,11 +1,12 @@
 @import "global/reset";
 @import "global/variables";
+@import "global/media";
 @import "global/typography";
 @import "global/modifiers";
-@import "global/media";
 
 @import "blocks/container";
 @import "blocks/navigation";
+@import "blocks/project";
 
 html {
   a {

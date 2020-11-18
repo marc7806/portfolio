@@ -7,3 +7,15 @@
     padding: 0 1rem;
   }
 }
+
+.hero {
+  margin: 8em 12em;
+
+  @include responsive("lg") {
+    margin: 5em;
+  }
+
+  @include responsive("sm") {
+    margin: 4em 1.5em;
+  }
+}

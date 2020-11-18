@@ -1,0 +1,27 @@
+.project__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+
+.project__preview {
+  flex: auto;
+  flex-basis: 500px;
+
+  &--img {
+    @extend .rounded-md;
+    margin: 0 auto;
+    overflow: hidden;
+
+    img {
+      transition: all 0.3s !important;
+    }
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}

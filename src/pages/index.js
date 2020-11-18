@@ -1,12 +1,16 @@
 import React from "react"
 import Layout from "../components/layout"
+import ProjectList from "../components/project/project-list"
 
 export default function Home() {
   return (
     <Layout>
+      <div className="hero">
+        <h2>Hello, I'm Marc - a computer science student from germany</h2>
+      </div>
+
       <div>
-        <h2>Hello world!</h2>
-        <p>Welcome</p>
+        <ProjectList />
       </div>
     </Layout>
   )
