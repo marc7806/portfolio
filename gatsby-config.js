@@ -5,5 +5,22 @@
  */
 
 module.exports = {
-  plugins: [`gatsby-plugin-sass`]
+  siteMetadata: {
+    title: "Marc S",
+    menuLinks: [
+      {
+        name: "Home",
+        link: "/",
+      },
+      {
+        name: "About",
+        link: "/about",
+      },
+    ],
+  },
+  plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-transition-link`,
+  ],
 }

@@ -1,0 +1,30 @@
+$media: (
+        'sm' : 650px,
+        'md' : 900px,
+        "lg" : 1280px,
+);
+
+@mixin responsive($breakpoint) {
+  @if ($breakpoint == sm) {
+    @media (max-width: map-get($media, "sm")) {
+      @content
+    }
+  }
+  @if ($breakpoint == md) {
+    @media (max-width: map-get($media, "md")) {
+      @content
+    }
+  }
+  @if ($breakpoint == lg) {
+    @media (max-width: map-get($media, "lg")) {
+      @content
+    }
+  }
+}
+
+// Add as css variables to root
+:root {
+  @each $key, $val in $media {
+    --breakpoint-#{$key}: #{$val};
+  }
+}

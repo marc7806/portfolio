@@ -2,6 +2,16 @@
 @import "global/variables";
 @import "global/typography";
 @import "global/modifiers";
+@import "global/media";
+
+@import "blocks/container";
+@import "blocks/navigation";
+
+html {
+  a {
+    text-decoration: none;
+  }
+}
 
 body {
   @extend .text-black-800;

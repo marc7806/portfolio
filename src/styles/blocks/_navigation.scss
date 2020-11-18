@@ -1,0 +1,53 @@
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+
+  &__desc {
+    flex-basis: 30%;
+    @extend .font-semibold, .text-grey-700;
+
+    @include responsive('sm') {
+      display: none;
+    }
+  }
+
+  &__logo {
+    text-align: center;
+    flex-basis: 40%;
+    @extend .font-semibold, .heading-lg;
+
+    @include responsive('sm') {
+      text-align: left;
+    }
+  }
+
+  &__nav {
+    flex-basis: 30%;
+
+    ul {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+
+      li {
+        padding: 1em 2em;
+
+        @include responsive('lg') {
+          padding: 1em 1em;
+        }
+      }
+    }
+
+    a {
+      transition: color ease-in-out .15s;
+      @extend .font-semibold, .text-grey-600;
+
+      &:hover {
+        @extend .text-grey-700;
+      }
+    }
+  }
+}

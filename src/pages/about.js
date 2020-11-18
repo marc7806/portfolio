@@ -1,12 +1,11 @@
 import React from "react"
 import Layout from "../components/layout"
 
-export default function Home() {
+export default function About() {
   return (
     <Layout>
       <div>
-        <h2>Hello world!</h2>
-        <p>Welcome</p>
+        <h1>About</h1>
       </div>
     </Layout>
   )
