@@ -22,6 +22,10 @@
     @include responsive('sm') {
       text-align: left;
     }
+
+    a {
+      @extend .text-black-800;
+    }
   }
 
   &__nav {

@@ -7,7 +7,11 @@ export default function Navigation({ siteTitle, menuLinks }) {
       <div className="header">
         <div className="header__desc">Portfolio</div>
 
-        <div className="header__logo">{siteTitle}</div>
+        <div className="header__logo">
+          <AniLink paintDrip duration={0.7} to="/" hex="#316fea">
+            {siteTitle}
+          </AniLink>
+        </div>
 
         <nav className="header__nav">
           <ul>
