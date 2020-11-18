@@ -1,7 +1,7 @@
-@import "reset";
-@import "variables";
-@import "typography";
-@import "modifiers";
+@import "global/reset";
+@import "global/variables";
+@import "global/typography";
+@import "global/modifiers";
 
 body {
   @extend .text-black-800;
