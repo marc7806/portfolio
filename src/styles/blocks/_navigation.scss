@@ -49,5 +49,9 @@
         @extend .text-grey-700;
       }
     }
+
+    &--active {
+      color: var(--color-grey-700) !important;
+    }
   }
 }

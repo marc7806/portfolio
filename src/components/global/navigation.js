@@ -13,7 +13,12 @@ export default function Navigation({ siteTitle, menuLinks }) {
           <ul>
             {menuLinks.map(link => (
               <li key={link.name}>
-                <AniLink paintDrip to={link.link} hex="#316fea">
+                <AniLink
+                  paintDrip
+                  to={link.link}
+                  hex="#316fea"
+                  activeClassName="header__nav--active"
+                >
                   {link.name}
                 </AniLink>
               </li>
