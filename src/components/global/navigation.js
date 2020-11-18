@@ -15,6 +15,7 @@ export default function Navigation({ siteTitle, menuLinks }) {
               <li key={link.name}>
                 <AniLink
                   paintDrip
+                  duration={0.7}
                   to={link.link}
                   hex="#316fea"
                   activeClassName="header__nav--active"
