@@ -1,0 +1,12 @@
+@import "reset";
+@import "variables";
+@import "typography";
+@import "modifiers";
+
+body {
+  @extend .text-black-800;
+  font-family: "Quicksand", serif;
+  font-weight: normal;
+  word-wrap: break-word;
+  font-kerning: normal;
+}

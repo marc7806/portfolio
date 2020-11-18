@@ -33,3 +33,19 @@
   src: url("./fonts/Quicksand-Light.ttf") format("truetype");
   font-display: swap;
 }
+
+h1 {
+  @extend .heading-4xl;
+}
+h2 {
+  @extend .heading-3xl;
+}
+h3 {
+  @extend .heading-2xl;
+}
+h4 {
+  @extend .heading-xl;
+}
+p {
+  @extend .heading-sm, .text-grey-600;
+}
