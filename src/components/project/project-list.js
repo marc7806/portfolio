@@ -19,7 +19,7 @@ const ProjectList = () => (
                 technologies
                 previewImage {
                   childImageSharp {
-                    fluid(maxWidth: 750, maxHeight: 500) {
+                    fluid(maxWidth: 650) {
                       ...GatsbyImageSharpFluid
                       ...GatsbyImageSharpFluidLimitPresentationSize
                     }
