@@ -34,7 +34,12 @@ const SlideShow = ({ images }) => {
 
   for (let [idx] of images.entries()) {
     nav.push(
-      <div key={idx} onClick={() => setImage(idx)} className="cursor-pointer">
+      <div
+        key={idx}
+        onClick={() => setImage(idx)}
+        className="cursor-pointer"
+        aria-hidden="true"
+      >
         {circle(idx === index)}
       </div>
     )
