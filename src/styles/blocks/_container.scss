@@ -6,17 +6,17 @@
   @include responsive('sm') {
     padding: 0 1rem;
   }
-}
 
-.container--main {
-  padding: 4rem 6rem;
+  &--main {
+    padding: 4rem 6rem;
 
-  @include responsive('md') {
-    padding: 2rem 3rem;
-  }
+    @include responsive('md') {
+      padding: 2rem 3rem;
+    }
 
-  @include responsive('sm') {
-    padding: 1rem 1.5rem;
+    @include responsive('sm') {
+      padding: 1rem 1.5rem;
+    }
   }
 }
 

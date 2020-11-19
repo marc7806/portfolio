@@ -7,7 +7,7 @@ import SlideShow from "../components/global/slideshow"
 export default function ProjectPost({ data }) {
   const {
     markdownRemark: {
-      frontmatter: { date, title, technologies },
+      frontmatter: { date, title, technologies, website },
       html,
     },
     allFile: { edges: images },
@@ -25,7 +25,7 @@ export default function ProjectPost({ data }) {
         <div className="mb-3 text-center">
           <h3>{title}</h3>
           <br />
-          <p className="heading-md">
+          <p className="project-post__technologies">
             {technologies.map((technology, index) => (
               <span key={index}>
                 {" "}
@@ -33,11 +33,15 @@ export default function ProjectPost({ data }) {
               </span>
             ))}
           </p>
+          <br />
+          <a href={website} target="_blank" rel="noopener noreferrer">
+            {website}
+          </a>
         </div>
         <SlideShow images={images} />
 
-        <div className="mt-3">
-          <p dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="mt-3 text-block">
+          <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </div>
     </Layout>
@@ -52,6 +56,7 @@ export const query = graphql`
         title
         technologies
         date
+        website
         previewImage {
           childImageSharp {
             fluid(maxWidth: 800, maxHeight: 450) {

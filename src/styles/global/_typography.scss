@@ -46,6 +46,10 @@ h2 {
 }
 h3 {
   @extend .heading-2xl;
+
+  @include responsive("md") {
+    font-size: var(--heading-lg-font-size);
+  }
 }
 h4 {
   @extend .heading-xl;

@@ -32,6 +32,26 @@
 .project-post {
   &__wrapper {
     margin: 0 10em;
+
+    @include responsive("lg") {
+      margin: 0 4em;
+    }
+
+    @include responsive("md") {
+      margin: 0 2em;
+    }
+
+    @include responsive("sm") {
+      margin: 0;
+    }
+  }
+
+  &__technologies {
+    @extend .heading-md;
+
+    @include responsive("md") {
+      font-size: var(--heading-sm-font-size);
+    }
   }
 
   &__top-bar {
@@ -39,4 +59,6 @@
     justify-content: space-between;
     @extend .text-grey-600, .mb-3;
   }
+
+  br {display:block}
 }
