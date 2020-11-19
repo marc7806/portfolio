@@ -2,11 +2,16 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import Img from "gatsby-image"
+import SlideShow from "../components/global/slideshow"
 
 export default function ProjectPost({ data }) {
-  const project = data.markdownRemark
-  let previewImgFluid = project.frontmatter.previewImage.childImageSharp.fluid
+  const {
+    markdownRemark: {
+      frontmatter: { date, title, technologies },
+      html,
+    },
+    allFile: { edges: images },
+  } = data
 
   return (
     <Layout>
@@ -15,28 +20,24 @@ export default function ProjectPost({ data }) {
           <AniLink paintDrip to="/" hex="#316fea">
             &#8249; Back to home
           </AniLink>
-          <p className="font-semibold">{project.frontmatter.date}</p>
+          <p className="font-semibold">{date}</p>
         </div>
         <div className="mb-3 text-center">
-          <h3>{project.frontmatter.title}</h3>
+          <h3>{title}</h3>
           <br />
           <p className="heading-md">
-            {project.frontmatter.technologies.map((technology, index) => (
-              <span>
+            {technologies.map((technology, index) => (
+              <span key={index}>
                 {" "}
-                {index > 0 && <label>&#8226;</label>} {technology}
+                {index > 0 && <em>&#8226;</em>} {technology}
               </span>
             ))}
           </p>
         </div>
-        <Img
-          fluid={previewImgFluid}
-          alt={project.frontmatter.title}
-          className="project__preview--img"
-        />
+        <SlideShow images={images} />
 
         <div className="mt-3">
-          <p dangerouslySetInnerHTML={{ __html: project.html }} />
+          <p dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </div>
     </Layout>
@@ -44,7 +45,7 @@ export default function ProjectPost({ data }) {
 }
 
 export const query = graphql`
-  query($slug: String!) {
+  query($slug: String!, $showcaseRegex: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
@@ -52,6 +53,25 @@ export const query = graphql`
         technologies
         date
         previewImage {
+          childImageSharp {
+            fluid(maxWidth: 800, maxHeight: 450) {
+              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
+            }
+          }
+        }
+      }
+    }
+    allFile(
+      filter: {
+        absolutePath: { regex: $showcaseRegex }
+        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+      }
+    ) {
+      totalCount
+      edges {
+        node {
+          base
           childImageSharp {
             fluid(maxWidth: 800, maxHeight: 450) {
               ...GatsbyImageSharpFluid

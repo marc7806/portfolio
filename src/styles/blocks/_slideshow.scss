@@ -1,0 +1,16 @@
+.slideshow {
+  position: relative;
+
+  &__nav {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1em;
+    padding: 0.05em 0.3em;
+    @extend .bg-black-500, .rounded-md;
+
+    &--flex {
+      display: flex;
+    }
+  }
+}

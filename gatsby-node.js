@@ -27,6 +27,9 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
             }
+            frontmatter {
+              showcaseRegex
+            }
           }
         }
       }
@@ -41,6 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: node.fields.slug,
+        showcaseRegex: node.frontmatter.showcaseRegex,
       },
     })
   })
