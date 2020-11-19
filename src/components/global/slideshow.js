@@ -12,7 +12,7 @@ const SlideShow = ({ images }) => {
     const currentInterval = setInterval(slideshowFunction, 8000)
 
     return () => clearInterval(currentInterval)
-  }, [index])
+  }, [index, images])
 
   const nav = []
 
