@@ -7,7 +7,7 @@ import SlideShow from "../components/global/slideshow"
 export default function ProjectPost({ data }) {
   const {
     markdownRemark: {
-      frontmatter: { date, title, technologies, website },
+      frontmatter: { date, title, technologies, website, mainColor },
       html,
     },
     allFile: { edges: images },
@@ -17,7 +17,7 @@ export default function ProjectPost({ data }) {
     <Layout>
       <div className="project-post__wrapper">
         <div className="project-post__top-bar">
-          <AniLink paintDrip to="/" hex="#316fea">
+          <AniLink paintDrip to="/" hex={mainColor}>
             &#8249; Back to home
           </AniLink>
           <p className="font-semibold">{date}</p>
@@ -38,7 +38,7 @@ export default function ProjectPost({ data }) {
             {website}
           </a>
         </div>
-        <SlideShow images={images} />
+        {images.length > 0 && <SlideShow images={images} />}
 
         <div className="mt-3 text-block">
           <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -49,7 +49,7 @@ export default function ProjectPost({ data }) {
 }
 
 export const query = graphql`
-  query($slug: String!, $showcaseRegex: String!) {
+  query($slug: String!, $showcaseRegex: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
@@ -57,6 +57,7 @@ export const query = graphql`
         technologies
         date
         website
+        mainColor
         previewImage {
           childImageSharp {
             fluid(maxWidth: 800, maxHeight: 450) {

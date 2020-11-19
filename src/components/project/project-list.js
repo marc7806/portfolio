@@ -17,6 +17,7 @@ const ProjectList = () => (
                 type
                 title
                 technologies
+                mainColor
                 previewImage {
                   childImageSharp {
                     fluid(maxWidth: 650) {
