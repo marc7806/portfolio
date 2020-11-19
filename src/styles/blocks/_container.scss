@@ -15,13 +15,17 @@
     }
 
     @include responsive('sm') {
-      padding: 1rem 1.5rem;
+      padding: 1rem 0.5rem;
     }
   }
 }
 
 .hero {
   margin: 2em 2em 10em 2em;
+
+  @include responsive("lg") {
+    margin: 2em 2em 6em 2em;
+  }
 
   @include responsive("md") {
     margin: 2em 2em 5em 2em;

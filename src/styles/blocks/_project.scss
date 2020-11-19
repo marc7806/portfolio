@@ -3,7 +3,12 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2em;
+
+  // for flex gap
+  margin: calc(2em / -2) calc(2em / -2);
+  > * {
+    margin: calc(2em / 2) calc(2em / 2);
+  }
 }
 
 .project__preview {
@@ -12,9 +17,15 @@
   flex-direction: column;
   flex: auto;
 
+  @include responsive('sm') {
+    min-width: 300px;
+  }
+
   &--img {
     @extend .rounded-md;
     overflow: hidden;
+    position:relative;
+    z-index:1;
 
     img {
       transition: all 0.3s !important;
