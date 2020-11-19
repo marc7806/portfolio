@@ -47,5 +47,14 @@ module.exports = {
         ],
       },
     },
+    // Svg loader
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg/,
+        },
+      },
+    },
   ],
 }

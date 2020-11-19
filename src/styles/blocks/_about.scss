@@ -1,0 +1,33 @@
+.about {
+  text-align: center;
+  margin: 5em;
+
+  @include responsive('md') {
+    margin: 5em 0;
+  }
+
+  &__img {
+    margin: 2.5em auto;
+    border-radius: 200px;
+  }
+
+  &__links {
+    &--icon {
+      cursor: pointer;
+      margin: 3em auto;
+      width: 50px;
+      height: 50px;
+      text-decoration: none;
+
+      path {
+        transition: fill ease-in-out .15s;
+      }
+
+      &:hover {
+        path {
+          fill: var(--color-black-700) !important;
+        }
+      }
+    }
+  }
+}

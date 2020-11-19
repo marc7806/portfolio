@@ -3,12 +3,12 @@ import Img from "gatsby-image"
 
 const SlideShow = ({ images }) => {
   const [index, setIndex] = React.useState(0)
-  const slideshowFunction = () => {
-    // round robin
-    setIndex((index + 1) % images.length)
-  }
 
   React.useEffect(() => {
+    const slideshowFunction = () => {
+      // round robin
+      setIndex((index + 1) % images.length)
+    }
     const currentInterval = setInterval(slideshowFunction, 8000)
 
     return () => clearInterval(currentInterval)
@@ -32,7 +32,7 @@ const SlideShow = ({ images }) => {
     setIndex(idx)
   }
 
-  for (let [idx, value] of images.entries()) {
+  for (let [idx] of images.entries()) {
     nav.push(
       <div key={idx} onClick={() => setImage(idx)} className="cursor-pointer">
         {circle(idx === index)}

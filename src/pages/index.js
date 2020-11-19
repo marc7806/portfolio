@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Layout>
       <div className="hero">
-        <h2>Hello, I'm Marc - a computer science student from Germany</h2>
+        <h2>Hello, I'm Marc - a Computer Science student from Germany</h2>
       </div>
 
       <div>
