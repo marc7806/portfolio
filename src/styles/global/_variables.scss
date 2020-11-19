@@ -1,55 +1,55 @@
 /* ========================== */
 /* HEADINGS */
 /* ========================== */
-$headings : (
+$headings: (
         "4xl": (
-                'font-size'         : 5rem,
-                "line-height"       : 1.05,
-                "letter-spacing"    : -0.04em,
+                'font-size' : 5rem,
+                "line-height" : 1.05,
+                "letter-spacing" : -0.04em,
         ),
         "3xl": (
-                'font-size'         : 4.375rem,
-                "line-height"       : 1.05,
-                "letter-spacing"    : -0.035em,
+                'font-size' : 4.375rem,
+                "line-height" : 1.05,
+                "letter-spacing" : -0.035em,
         ),
         "2xl": (
-                'font-size'         : 3.5rem,
-                "line-height"       : 1.05,
-                "letter-spacing"    : -0.02em,
+                'font-size' : 3.5rem,
+                "line-height" : 1.05,
+                "letter-spacing" : -0.02em,
         ),
         "xl": (
-                'font-size'         : 2.75rem,
-                "line-height"       : 1.05,
-                "letter-spacing"    : -0.01em,
+                'font-size' : 2.75rem,
+                "line-height" : 1.05,
+                "letter-spacing" : -0.01em,
         ),
         "lg": (
-                'font-size'         : 2rem,
-                "line-height"       : 1.1,
-                "letter-spacing"    : -0.01em,
+                'font-size' : 2rem,
+                "line-height" : 1.1,
+                "letter-spacing" : -0.01em,
         ),
         "md": (
-                'font-size'         : 1.5rem,
-                "line-height"       : 1.25,
-                "letter-spacing"    : -0.01em,
+                'font-size' : 1.5rem,
+                "line-height" : 1.25,
+                "letter-spacing" : -0.01em,
         ),
         "sm": (
-                'font-size'         : 1rem,
-                "line-height"       : 1.25,
-                "letter-spacing"    : 0em,
+                'font-size' : 1rem,
+                "line-height" : 1.25,
+                "letter-spacing" : 0em,
         ),
         "xs": (
-                'font-size'         : 0.80rem,
-                "line-height"       : 1.25,
-                "letter-spacing"    : 0em,
+                'font-size' : 0.80rem,
+                "line-height" : 1.25,
+                "letter-spacing" : 0em,
         ),
 );
 
 // Add as css variables to root
-:root{
+:root {
   @each $key, $value in $headings {
-      @each $attr, $val in $value {
-        --heading-#{$key}-#{$attr} : #{$val};
-      }
+    @each $attr, $val in $value {
+      --heading-#{$key}-#{$attr} : #{$val};
+    }
   }
 }
 
@@ -65,12 +65,12 @@ $headings : (
 /* ========================== */
 /* FONT WEIGHTS */
 /* ========================== */
-$weights : (
-        'bold'                : 700,
-        'semibold'            : 600,
-        "medium"              : 500,
-        'regular'             : 400,
-        "light"               : 300,
+$weights: (
+        'bold' : 700,
+        'semibold' : 600,
+        "medium" : 500,
+        'regular' : 400,
+        "light" : 300,
 );
 
 // Create modifier classes
@@ -83,41 +83,41 @@ $weights : (
 /* ========================== */
 /* COLORS */
 /* ========================== */
-$colors : (
+$colors: (
         "black": (
-                'base'              : #000,
-                '800'               : rgba(0,0,0,0.88),
-                "700"               : rgba(0,0,0,0.66),
-                '600'               : rgba(0,0,0,0.45),
-                "500"               : rgba(0,0,0,0.24),
-                '400'               : rgba(0,0,0,0.14),
-                "300"               : rgba(0,0,0,0.08),
-                '200'               : rgba(0,0,0,0.05),
-                "100"               : rgba(0,0,0,0.02),
+                'base' : #000,
+                '800' : rgba(0, 0, 0, 0.88),
+                "700" : rgba(0, 0, 0, 0.66),
+                '600' : rgba(0, 0, 0, 0.45),
+                "500" : rgba(0, 0, 0, 0.24),
+                '400' : rgba(0, 0, 0, 0.14),
+                "300" : rgba(0, 0, 0, 0.08),
+                '200' : rgba(0, 0, 0, 0.05),
+                "100" : rgba(0, 0, 0, 0.02),
         ),
         "grey": (
-                'base'              : #fff,
-                '800'               : #1f1f1f,
-                "700"               : #575757,
-                '600'               : #999,
-                "500"               : #c2c2c2,
-                '400'               : #dedede,
-                "300"               : #ebebeb,
-                '200'               : #f2f2f2,
-                "100"               : #fafafa,
+                'base' : #fff,
+                '800' : #1f1f1f,
+                "700" : #575757,
+                '600' : #999,
+                "500" : #c2c2c2,
+                '400' : #dedede,
+                "300" : #ebebeb,
+                '200' : #f2f2f2,
+                "100" : #fafafa,
         ),
         "blue": (
-                'base'              : #2064ca,
-                '800'               : #2064ca,
-                '700'               : #316fea,
-                "600"               : #3879fa,
-                '500'               : #e2f0ff,
-                "400"               : #f1f7fe,
+                'base' : #2064ca,
+                '800' : #2064ca,
+                '700' : #316fea,
+                "600" : #3879fa,
+                '500' : #e2f0ff,
+                "400" : #f1f7fe,
         ),
 );
 
 // Add as css variables to root
-:root{
+:root {
   @each $color, $nestedMap in $colors {
     @each $weight, $val in $nestedMap {
       --color-#{$color}-#{$weight} : #{$val};
@@ -143,6 +143,40 @@ $colors : (
         background-color: #{$val};
       }
     }
+  }
+}
+
+/* ========================== */
+/* Margins & paddings */
+/* ========================== */
+$spaces: (
+        '1' : 1em,
+        '2' : 2em,
+        "3" : 3em,
+        '4' : 4em,
+        "5" : 5em,
+);
+
+// Create modifier classes
+@each $key, $value in $spaces {
+  .m-#{$key} {
+    margin: #{$value};
+  }
+  .mt-#{$key} {
+    margin-top: #{$value};
+  }
+  .mb-#{$key} {
+    margin-bottom: #{$value};
+  }
+
+  .p-#{$key} {
+    padding: #{$value};
+  }
+  .pt-#{$key} {
+    padding-top: #{$value};
+  }
+  .pb-#{$key} {
+    padding-bottom: #{$value};
   }
 }
 

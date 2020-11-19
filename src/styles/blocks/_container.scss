@@ -8,14 +8,26 @@
   }
 }
 
-.hero {
-  margin: 8em 12em;
+.container--main {
+  padding: 4rem 6rem;
 
-  @include responsive("lg") {
-    margin: 5em;
+  @include responsive('md') {
+    padding: 2rem 3rem;
+  }
+
+  @include responsive('sm') {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.hero {
+  margin: 2em 2em 10em 2em;
+
+  @include responsive("md") {
+    margin: 2em 2em 5em 2em;
   }
 
   @include responsive("sm") {
-    margin: 4em 1.5em;
+    margin: 2em 2em 4em 2em;
   }
 }

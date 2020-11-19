@@ -45,15 +45,6 @@
       }
     }
 
-    a {
-      transition: color ease-in-out .15s;
-      @extend .font-semibold, .text-grey-600;
-
-      &:hover {
-        @extend .text-grey-700;
-      }
-    }
-
     &--active {
       color: var(--color-grey-700) !important;
     }

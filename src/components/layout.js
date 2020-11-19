@@ -36,7 +36,7 @@ const Layout = ({ children }) => (
             menuLinks={data.site.siteMetadata.menuLinks}
             siteTitle={data.site.siteMetadata.title}
           />
-          {children}
+          <main className="container--main">{children}</main>
         </div>
       </React.Fragment>
     )}

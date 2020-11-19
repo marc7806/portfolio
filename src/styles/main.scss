@@ -11,6 +11,12 @@
 html {
   a {
     text-decoration: none;
+    transition: color ease-in-out .15s;
+    @extend .font-semibold, .text-grey-600;
+
+    &:hover {
+      @extend .text-grey-700;
+    }
   }
 }
 

@@ -16,9 +16,10 @@ const ProjectList = () => (
               frontmatter {
                 type
                 title
+                technologies
                 previewImage {
                   childImageSharp {
-                    fluid(maxWidth: 650, maxHeight: 400) {
+                    fluid(maxWidth: 750, maxHeight: 500) {
                       ...GatsbyImageSharpFluid
                       ...GatsbyImageSharpFluidLimitPresentationSize
                     }
