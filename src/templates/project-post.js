@@ -67,6 +67,7 @@ export const query = graphql`
         absolutePath: { regex: $showcaseRegex }
         extension: { regex: "/(jpg)|(png)|(jpeg)/" }
       }
+      sort: { order: ASC, fields: name }
     ) {
       totalCount
       edges {
