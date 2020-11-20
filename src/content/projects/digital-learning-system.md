@@ -7,6 +7,7 @@ mainColor: "#316fea"
 technologies: ['Java', 'SpringBoot', 'VueJS', 'SQL']
 showcaseRegex: "/dls-showcase/"
 website: "https://www.digital-learning-system.org/"
+position: 1
 ---
 Within the scope of a study project, me and three fellow students developed a digital learning system for students. The system offers students the possibility to deepen their knowledge by creating index cards. These index cards can then be queried in an interactive quiz mode. Through a dashboard students can see their current learning progress. 
 <br/> <br>

@@ -7,6 +7,7 @@ mainColor: "#FFBE54"
 technologies: ['Java']
 showcaseRegex: "/----/"
 website: "https://github.com/marc7806/bbc-audiowaveform-cli-wrapper"
+position: 3
 ---
 Recently, I've created a Java wrapper for the CLI tool named <a href="https://github.com/bbc/audiowaveform" target="_blank" rel="noopener noreferrer">BBC AudioWaveform</a>.
 <br/> <br>

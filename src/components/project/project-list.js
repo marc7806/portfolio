@@ -8,6 +8,7 @@ const ProjectList = () => (
       query AllProjects {
         allMarkdownRemark(
           filter: { frontmatter: { type: { eq: "Project" } } }
+          sort: { order: ASC, fields: frontmatter___position }
         ) {
           totalCount
           edges {
