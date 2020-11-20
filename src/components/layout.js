@@ -2,6 +2,7 @@ import React from "react"
 import Navigation from "./global/navigation"
 import { graphql, StaticQuery } from "gatsby"
 import Helmet from "react-helmet"
+import favicon from "../../static/favicon.ico"
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -29,7 +30,9 @@ const Layout = ({ children }) => (
               content: "portfolio, software, engineering, code, projects",
             },
           ]}
-        />
+        >
+          <link rel="icon" href={favicon} />
+        </Helmet>
 
         <div className="container">
           <Navigation
