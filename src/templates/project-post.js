@@ -34,9 +34,11 @@ export default function ProjectPost({ data }) {
             ))}
           </p>
           <br />
-          <a href={website} target="_blank" rel="noopener noreferrer">
-            {website}
-          </a>
+          {website && (
+            <a href={website} target="_blank" rel="noopener noreferrer">
+              {website}
+            </a>
+          )}
         </div>
         {images.length > 0 && <SlideShow images={images} />}
 
