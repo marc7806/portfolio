@@ -19,8 +19,8 @@ export default function About({ data }) {
         <GatsbyImage image={gatsbyImageData} alt={name} className="about__img" />
         <div>
           <p className="heading-md">
-            My name is Marc and I am currently studying Computer Science at the
-            Technical University Ingolstadt. My interests are programming and
+            My name is Marc and I am currently working as a Software Engineer. I studied Computer Science at the Technical University of Ingolstadt.
+            My interests are programming and
             software architecture design. My goal is to create software that
             inspires and supports people in their daily life.
           </p>
