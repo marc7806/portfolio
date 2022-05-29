@@ -1,13 +1,10 @@
 import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 export default function ProjectPreview({ project }) {
   const {
     frontmatter: {
-      previewImage: {
-        childImageSharp: { fluid: previewImage },
-      },
       mainColor,
     },
   } = project
@@ -20,12 +17,11 @@ export default function ProjectPreview({ project }) {
         hex={mainColor}
         activeClassName="header__nav--active"
       >
-        <Img
-          fluid={previewImage}
+        <GatsbyImage
+          image={project.frontmatter.previewImage.childImageSharp.gatsbyImageData}
           alt={project.frontmatter.title}
-          className="project__preview--img"
-        />
+          className="project__preview--img" />
       </AniLink>
     </div>
-  )
+  );
 }

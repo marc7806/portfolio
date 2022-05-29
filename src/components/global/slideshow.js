@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const SlideShow = ({ images }) => {
   const [index, setIndex] = React.useState(0)
@@ -48,18 +48,16 @@ const SlideShow = ({ images }) => {
   return (
     <React.Fragment>
       <div className="slideshow">
-        <Img
-          fluid={images[index].node.childImageSharp.fluid}
+        <GatsbyImage
+          image={images[index].node.childImageSharp.gatsbyImageData}
           alt={images[index].node.base.split(".")[0]}
-          className="rounded-md center"
-          fadeIn={true}
-        />
+          className="rounded-md center" />
         <div className="position-absolute slideshow__nav">
           <div className="slideshow__nav--flex">{nav}</div>
         </div>
       </div>
     </React.Fragment>
-  )
+  );
 }
 
 export default SlideShow

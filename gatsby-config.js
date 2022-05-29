@@ -33,8 +33,9 @@ module.exports = {
     // for markdown processing
     `gatsby-transformer-remark`,
     // for image processing
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {

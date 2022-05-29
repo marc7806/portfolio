@@ -1,13 +1,13 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import GithubLogo from "../images/svg/github_logo.svg"
 
 export default function About({ data }) {
   const {
     file: {
-      childImageSharp: { fluid: aboutImage },
+      childImageSharp: { gatsbyImageData },
       name,
     },
   } = data
@@ -16,7 +16,7 @@ export default function About({ data }) {
     <Layout>
       <div className="about">
         <h3>About me</h3>
-        <Img fluid={aboutImage} alt={name} className="about__img" />
+        <GatsbyImage image={gatsbyImageData} alt={name} className="about__img" />
         <div>
           <p className="heading-md">
             My name is Marc and I am currently studying Computer Science at the
@@ -38,22 +38,15 @@ export default function About({ data }) {
         </div>
       </div>
     </Layout>
-  )
+  );
 }
 
-export const query = graphql`
-  query {
-    file(
-      name: { regex: "/about/" }
-      extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 200, maxHeight: 200) {
-          ...GatsbyImageSharpFluid
-          ...GatsbyImageSharpFluidLimitPresentationSize
-        }
-      }
-      name
+export const query = graphql`{
+  file(name: {regex: "/about/"}, extension: {regex: "/(jpg)|(png)|(jpeg)/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 200, height: 200, layout: CONSTRAINED)
     }
+    name
   }
+}
 `

@@ -50,45 +50,35 @@ export default function ProjectPost({ data }) {
   )
 }
 
-export const query = graphql`
-  query($slug: String!, $showcaseRegex: String) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        technologies
-        date
-        website
-        mainColor
-        previewImage {
-          childImageSharp {
-            fluid(maxWidth: 800, maxHeight: 450) {
-              ...GatsbyImageSharpFluid
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
-        }
-      }
-    }
-    allFile(
-      filter: {
-        absolutePath: { regex: $showcaseRegex }
-        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-      }
-      sort: { order: ASC, fields: name }
-    ) {
-      totalCount
-      edges {
-        node {
-          base
-          childImageSharp {
-            fluid(maxWidth: 800, maxHeight: 450) {
-              ...GatsbyImageSharpFluid
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
+export const query = graphql`query ($slug: String!, $showcaseRegex: String) {
+  markdownRemark(fields: {slug: {eq: $slug}}) {
+    html
+    frontmatter {
+      title
+      technologies
+      date
+      website
+      mainColor
+      previewImage {
+        childImageSharp {
+          gatsbyImageData(width: 800, height: 450, layout: CONSTRAINED)
         }
       }
     }
   }
+  allFile(
+    filter: {absolutePath: {regex: $showcaseRegex}, extension: {regex: "/(jpg)|(png)|(jpeg)/"}}
+    sort: {order: ASC, fields: name}
+  ) {
+    totalCount
+    edges {
+      node {
+        base
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
+        }
+      }
+    }
+  }
+}
 `
